@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.criteria.Order;
+
 @Service
 public class OrderService {
     @Autowired
@@ -21,9 +23,17 @@ public class OrderService {
         return new ResponseEntity<>(orderRepository.findAll(), HttpStatus.OK);
     }
 
-    public void createOrder(Orders order, Long customerId){
+    public void createOrder(Orders orders, Long customerId){
         customerRepository.findById(customerId).map(customer -> {
-            order.setCustomer(customer);
-            return orderRepository.save(order);});
+            orders.setCustomer(customer);
+            return orderRepository.save(orders);});
+    }
+    public void updateOrder(Orders orders, Long customerId){
+        customerRepository.findById(customerId).map(customer -> {
+            orders.setCustomer(customer);
+            return orderRepository.save(orders);});
+    }
+    public void deleteOrder(Long orderId){
+        orderRepository.deleteById(orderId);
     }
 }

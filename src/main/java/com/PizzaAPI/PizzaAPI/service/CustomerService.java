@@ -21,4 +21,12 @@ public class CustomerService {
     public void createCategory(Customer customer){
         customerRepository.save(customer);
     }
+    public ResponseEntity<?> updateCustomer(Customer customer, Long customerId){
+        customerRepository.save(customer);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    public void deleteCustomer(Long customerId){
+        customerRepository.deleteById(customerId);
+    }
 }
