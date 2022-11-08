@@ -1,12 +1,9 @@
 package com.PizzaAPI.PizzaAPI.models;
 
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
 import javax.persistence.*;
 import java.util.Arrays;
 @Entity
-public class Order {
+public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,7 +14,7 @@ public class Order {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    public Order(){
+    public Orders(){
 
     }
 

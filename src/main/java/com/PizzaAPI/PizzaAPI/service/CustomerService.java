@@ -1,9 +1,7 @@
 package com.PizzaAPI.PizzaAPI.service;
 
 import com.PizzaAPI.PizzaAPI.models.Customer;
-import com.PizzaAPI.PizzaAPI.models.Order;
 import com.PizzaAPI.PizzaAPI.repository.CustomerRepository;
-import com.PizzaAPI.PizzaAPI.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
